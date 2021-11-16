@@ -1,0 +1,14 @@
+#!/bin/bash
+
+killall polybar
+if [[ $(type "xrandr") && $1 != '--override' ]]; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload clock &
+    MONITOR=$m polybar --reload start &
+    MONITOR=$m polybar --reload spotify &
+  done
+else
+  polybar --reload clock &
+  polybar --reload start &
+  polybar --reload spotify &
+fi

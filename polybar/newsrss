@@ -1,0 +1,24 @@
+#!/bin/bash
+var=`curl $1 2>/dev/null | grep "<$2>" | tail -n+3 | cut -d'[' -f3 | cut -d']' -f1 | cut -d'>' -f "$3" | cut -d'<' -f1`
+len=`echo "$var" | wc -l`
+no=$(( ( RANDOM % $len ) + 1 ))
+var=`echo "$var" | head -n $no | tail -1`
+len=`echo "$var" | wc -c`
+threshold='75'
+low='72'
+
+if [ $len -gt $threshold ]; then
+    tmp=`echo "$var" | cut -c "1-$low"`
+    tmp="$tmp..."
+else
+    tmp=$var
+fi
+
+len=`echo "$tmp" | wc -c`
+while [ $len -lt $threshold ]; do
+    tmp="$tmp "
+    len=`echo "$tmp" | wc -c`
+done
+
+echo "$tmp"
+#echo "$var" | head -n $no | tail -1 | sed 's/&amp;/&/'

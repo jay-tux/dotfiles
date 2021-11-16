@@ -1,0 +1,26 @@
+#!/bin/bash
+
+proglangs=( "C#" "C" "Java" "JS" "Haskell" )
+open=( "/home/jay/csharp" "/home/jay/cproj" "/home/jay/javaws" "/home/jay/jsproj" "/home/jay/haskell" )
+file="/usr/usr/share/polybarmods/index_proglang"
+if [ ! -f "$file" ]; then
+    echo "0" >"$file"
+fi
+
+index=$(cat "$file")
+
+if [[ $1 == "--open" ]]; then
+    back=$PWD
+    cd ${open[$index]}
+    kitty &
+    cd $back
+elif [[ $1 == "--scroll" ]]; then
+    echo "Old index $index"
+    index=$(($index + 1))
+    index=$(($index % ${#proglangs[@]}))
+    echo "New index $index"
+    echo $index >"$file"
+    echo ${proglangs[$index]}
+elif [[ $1 == "--echo" ]]; then
+    echo ${proglangs[$index]}
+fi

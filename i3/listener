@@ -1,0 +1,3 @@
+#!/bin/bash
+
+i3-msg -t get_workspaces | sed 's/,/\n/g' | grep num | cut -d':' -f2

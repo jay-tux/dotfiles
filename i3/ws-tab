@@ -1,0 +1,24 @@
+#!/bin/bash
+
+pth="$HOME/.config/i3/ws-cache"
+
+if [ -f $pth ]; then
+    current=`cat $pth`
+else
+    echo 1 >$pth
+    current=1
+fi
+
+if [[ $1 = set ]]; then
+    echo $2 >$pth
+    i3 workspace number $2
+elif [[ $1 = tab ]]; then
+    ws=`i3-msg -t get_workspaces | sed 's/,/\n/g' | grep num | cut -d':' -f2`
+    next=$(($current+$2))
+    next=$(($next%10))
+    echo $next >$pth
+    echo $next
+    i3 workspace number $next
+elif [[ $1 = exit ]]; then
+    if [ -f $pth ]; then rm $pth; fi
+fi

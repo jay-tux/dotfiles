@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [[ $1 = '--meta' ]]; then
+  title=`sayonara-query title`
+  stat=`sayonara-query status`
+  alb=`sayonara-query album`
+  art=`sayonara-query artist | cut -d"'" -f2 | cut -d',' -f1`
+  if [[ $stat = "Playing" ]]; then
+    stat='▶️'
+  else
+    stat='⏸️'
+  fi
+  echo "$2" | sed "s/#title#/$title/" |
+    sed "s/#status#/$stat/" | sed "s/#artist#/$art/" | sed "s/#album#/$alb/"
+elif [[ $1 = '--plp' ]]; then
+  sayonara-ctl play-pause
+elif [[ $1 = '--skip' ]]; then
+  sayonara-ctl next
+elif [[ $1 = '--prev' ]]; then
+  sayonara-ctl previous
+fi

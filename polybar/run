@@ -1,0 +1,11 @@
+#!/bin/bash
+#killall polybar
+
+#~/.config/polybar/polybar-speedtest
+#~/.config/polybar/polybar-speedtest --upload
+
+#polybar -q news &
+#polybar -q other &
+#polybar -q top &
+
+#polybar -q updn &

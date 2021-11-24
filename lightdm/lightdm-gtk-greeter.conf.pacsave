@@ -1,0 +1,8 @@
+[greeter]
+theme-name = Adapta
+icon-theme-name = Breeze_Snow
+background = /usr/share/pixmaps/greeter_fox.png
+position = -50%,start 50%,end
+screensaver-timeout = 600
+a11y-states = +contrast;+font
+

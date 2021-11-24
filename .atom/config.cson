@@ -1,0 +1,103 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "401ba3e3-f417-4934-aa21-a3298a15ad94"
+      muteAllErrors: true
+      showLoadingView: false
+    haskell:
+      beautify_on_save: true
+  "atom-discord":
+    detail:
+      text: "custom"
+      textCustom: "Wish me luck!"
+    largeImage: {}
+    rest:
+      fileName: "developer-idle"
+      fileNameCustom: "ZZZZZZZZZZZZZZ"
+      restOnBlur: true
+      smallImage: "atom-2"
+    smallImage:
+      image: "atom-3"
+      text: "working-project"
+  "atom-haskell":
+    hasAddedConfiguration: true
+  "atom-package-deps":
+    ignored: [
+      "atom-haskell"
+    ]
+  "autocomplete-haskell":
+    hideHintPanelIfEmpty: false
+  "build-cmake":
+    buildRoot: "${projectDir}/build/"
+  core:
+    disabledPackages: [
+      "linter-gcc"
+      "ide-clangd"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "flex-monokai"
+      "CP-syntax"
+    ]
+  editor:
+    fontFamily: "Hasklig"
+    scrollPastEnd: true
+  "exception-reporting":
+    userId: "e68d511c-745a-4dce-a73d-6008ba55fefb"
+  "haskell-ghc-mod":
+    lowMemorySystem: true
+    onChangeCheck: true
+    onChangeLint: true
+  "ide-ccls":
+    enableSemanticHighlighting: true
+  "ide-haskell":
+    autoHideOutput: true
+    messageDisplayFrontend: "linter"
+    startupMessageIdeBackend: false
+    switchTabOnCheck: false
+  "ide-haskell-cabal":
+    cabal:
+      activeGhcVersion: "8.0"
+  "ide-haskell-repl":
+    defaultRepl: "stack"
+  "ide-python":
+    pylsPlugins:
+      flake8:
+        ignore: [
+          "E121"
+          "E123"
+          "E126"
+          "E226"
+          "E24"
+          "E704"
+          "W503"
+          "W504"
+          "E501"
+        ]
+  "linter-gcc":
+    gccDefaultCppFlags: "-c -Wall -std=c++17"
+    gccLintOnTheFly: true
+    gccLintOnTheFlyInterval: 500
+  "linter-js-blyss":
+    showEslintRules: true
+  "linter-json-lint":
+    allowComments: true
+  "linter-ui-default":
+    hidePanelWhenEmpty: false
+    panelHeight: 177
+  "one-dark-ui":
+    stickyHeaders: true
+    tabSizing: "Maximum"
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  wakatime:
+    apikey: "Saved in your $WAKATIME_HOME/.wakatime.cfg file"
+  welcome:
+    showOnStartup: false
+  "x-terminal":
+    spawnPtySettings:
+      projectCwd: true
+    terminalSettings:
+      colors:
+        background: "#2b213a"
+      fontFamily: "monospace"

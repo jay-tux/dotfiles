@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Mount HDD
+sudo mount /dev/sda1 /home/jay/hdd						# Mount HDD Device
+
+# Set up connections
+sudo dhcpcd									# Dynamic IP Resolver (internet in general)
+sudo wpa_supplicant -B -i wlo1 -c /etc/wpa_supplicant/wpa_supplicant.conf	# WiFi driver (load config etc)
+
+# Small things
+touchpad									# Tap on touchpad ( = click)
+setxkbmap -option compose:ralt							# R-Alt for dead keys
+setxkbmap -option eurosign:e							# Euro on E
+
+# Enable locker
+light-locker &
+
+# Set Qt Platform Theme
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# Start KDE Connect
+#/usr/lib/kdeconnectd &								# KDE Connect (useful when phone is on hotspot)
+
+# Start X11
+# startx

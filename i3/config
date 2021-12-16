@@ -39,8 +39,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 
 # Control Spotify if active
 bindsym XF86AudioPlay exec playerctl play-pause -p spotify
@@ -217,12 +217,13 @@ mode "resize" {
 }
 
 # Them programs(TM)
-bindsym $mod+Shift+F 	exec firefox &
-bindsym $mod+Shift+D 	exec discord &
-bindsym $mod+X		exec light-locker-command -l
-bindsym $mod+Shift+X	exec betterlockscreen -s
+bindsym $mod+Shift+F 	  exec firefox &
+bindsym $mod+Shift+D 	  exec discord &
+bindsym $mod+X		      exec light-locker-command -l
+bindsym $mod+Shift+X	  exec betterlockscreen -s
 bindsym $mod+Shift+A    exec atom
 bindsym $mod+Shift+S    exec flameshot gui
+bindsym $mod+Shift+P    exec xournalpp
 bindsym $mod+C          exec ulauncher --no-window-shadow
 bindsym $mod+M          exec spotify-noads
 
@@ -234,8 +235,8 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 exec_always /home/jay/.config/i3/autostart_polybar
-exec_always feh --bg-scale /home/jay/hdd/art/backgrounds/dead_sands_by_kvacm_desnrlj.jpg
-exec_always betterlockscreen -u /home/jay/hdd/art/lockscreens
+exec_always feh --bg-scale /home/jay/hdd/art/backgrounds/wakingofskytree.jpg
+exec_always --no-startup-id picom -b --config /home/jay/.config/picom/picom.conf
 exec kdeconnectd &
-exec light-locker --lock-after-screensaver=1 --no-late-locking --lock-on-suspend --lock-on-lid --idle-hint
+exec light-locker --lock-after-screensaver=0 --no-late-locking --lock-on-lid
 exec export QT_QPA_PLATFORMTHEME=qt5ct

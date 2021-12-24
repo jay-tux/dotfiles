@@ -30,10 +30,10 @@ clock = "Khiara Script:size=35:style=Bold"
 emoji = "Noto Sans Symbols2:style=Regular"
 
 [colors]
-background = #0e100d
-background-clock = #0e100d
+background = #f00e100d
+background-clock = #f00e100d
 dbg = #000000
-background-alt = #4f3512
+background-alt = #f04f3512
 foreground = #727469
 dfg = #a36d0b
 foreground-prefix = #ea670f
@@ -59,6 +59,8 @@ module-margin = 1
 background = ${colors.background}
 foreground = ${colors.foreground}
 foreground-prefix = ${colors.foreground-prefix}
+tray-position = right
+enable-ipc = true
 
 [bar/clock]
 monitor = ${env:MONITOR:}
@@ -307,7 +309,7 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-;pseudo-transparency = false
+pseudo-transparency = true
 
 [global/wm]
 margin-top = 5
